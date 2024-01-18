@@ -10,6 +10,7 @@ public class GameHandler : MonoBehaviour
     public float distanceTraveled;
     public float timeElapsedInGame;
     public EventsActivator eventHandler;
+    public ArduinoHandler arduino;
 
     public float distanceTarget;
     public float timeTarget;
@@ -45,6 +46,7 @@ public class GameHandler : MonoBehaviour
         isNextScene = true;
         StopAllCoroutines();
         Destroy(eventHandler);
+        Destroy(arduino);
     }
 
     public void SetTimeElapsed(float newTime)
