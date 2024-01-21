@@ -5,6 +5,8 @@ using UnityEngine.SceneManagement;
 
 public class EventsActivator : MonoBehaviour
 {
+    public bool weatherEvents;
+
     [Header("Components")]
     public GameObject carLightLeft;
     public GameObject carLightRight;
@@ -49,7 +51,10 @@ public class EventsActivator : MonoBehaviour
         buildIndexRightNow = SceneManager.GetActiveScene().buildIndex;
         if (buildIndexRightNow == 1)
         {
-            StartCoroutine(GameEvent());
+            if (weatherEvents)
+            {
+                StartCoroutine(GameEvent());
+            }
             Debug.Log("shi crazy");
         }
     }
@@ -145,7 +150,6 @@ public class EventsActivator : MonoBehaviour
         if (!rightCarLight && !leftCarLight)
         {
             RenderSettings.fogDensity = bothCarLightGone;
-            lightUI.SetActive(true);
         }
         else if (isMist)
         {
@@ -155,7 +159,7 @@ public class EventsActivator : MonoBehaviour
         else if (!rightCarLight || !leftCarLight)
         {
             RenderSettings.fogDensity = singleCarLightGone;
-            lightUI.SetActive(false);
+            lightUI.SetActive(true);
         }
         else if (isRaining)
         {
@@ -176,31 +180,117 @@ public class EventsActivator : MonoBehaviour
 
     private IEnumerator GameEvent()
     {
-        yield return new WaitForSeconds(30f);
+        yield return new WaitForSeconds(15f);
         LeftCarLightOff();
-        yield return new WaitForSeconds(50f);
+        yield return new WaitForSeconds(10f);
         StartRain();
-        yield return new WaitForSeconds(50f);
+        yield return new WaitForSeconds(15f);
         RightCarLightOff();
-        yield return new WaitForSeconds(30f);
+        yield return new WaitForSeconds(15f);
         StartFog();
-        yield return new WaitForSeconds(20f);
+        yield return new WaitForSeconds(10f);
         LeftCarLightOff();
-        yield return new WaitForSeconds(30f);
+        yield return new WaitForSeconds(10f);
         StartSnow();
-        yield return new WaitForSeconds(20f);
+        yield return new WaitForSeconds(25f);
+        StartRain();
+        yield return new WaitForSeconds(15f);
+        RightCarLightOff();
+        yield return new WaitForSeconds(10f);
         LeftCarLightOff();
         yield return new WaitForSeconds(5f);
         RightCarLightOff();
-        yield return new WaitForSeconds(55f);
+        yield return new WaitForSeconds(25f);
         StartRain();
         StartFog();
-        yield return new WaitForSeconds(30f);
+        yield return new WaitForSeconds(10f);
+        StartSnow();
+        yield return new WaitForSeconds(25f);
+        StartRain();
+        yield return new WaitForSeconds(15f);
+        RightCarLightOff();
+        yield return new WaitForSeconds(10f);
         LeftCarLightOff();
-        yield return new WaitForSeconds(40f);
+        yield return new WaitForSeconds(20f);
         LeftCarLightOff();
         StartSnow();
         RightCarLightOff();
+        yield return new WaitForSeconds(30f);
+        RightCarLightOff();
+        yield return new WaitForSeconds(10f);
+        StartFog();
+        yield return new WaitForSeconds(10f);
+        LeftCarLightOff();
+        yield return new WaitForSeconds(5f);
+        StartSnow();
+        yield return new WaitForSeconds(15f);
+        RightCarLightOff();
+        yield return new WaitForSeconds(10f);
+        StartSnow();
+        yield return new WaitForSeconds(15f);
+        RightCarLightOff();
+        yield return new WaitForSeconds(25f);
+        StartRain();
+        yield return new WaitForSeconds(15f);
+        RightCarLightOff();
+        yield return new WaitForSeconds(10f);
+        LeftCarLightOff();
+        yield return new WaitForSeconds(25f);
+        StartRain();
+        yield return new WaitForSeconds(15f);
+        RightCarLightOff();
+        yield return new WaitForSeconds(10f);
+        LeftCarLightOff();
+        yield return new WaitForSeconds(10f);
+        LeftCarLightOff();
+        yield return new WaitForSeconds(20f);
+        LeftCarLightOff();
+        StartSnow();
+        RightCarLightOff();
+        yield return new WaitForSeconds(30f);
+        RightCarLightOff();
+        yield return new WaitForSeconds(10f);
+        StartFog();
+        yield return new WaitForSeconds(10f);
+        LeftCarLightOff();
+        yield return new WaitForSeconds(2f);
+        RightCarLightOff();
+        yield return new WaitForSeconds(25f);
+        StartRain();
+        StartFog();
+        yield return new WaitForSeconds(10f);
+        StartSnow();
+        yield return new WaitForSeconds(15f);
+        RightCarLightOff();
+        yield return new WaitForSeconds(25f);
+        StartRain();
+        yield return new WaitForSeconds(15f);
+        RightCarLightOff();
+        yield return new WaitForSeconds(10f);
+        LeftCarLightOff();
+        yield return new WaitForSeconds(25f);
+        StartRain();
+        yield return new WaitForSeconds(15f);
+        RightCarLightOff();
+        yield return new WaitForSeconds(10f);
+        LeftCarLightOff();
+        yield return new WaitForSeconds(10f);
+        LeftCarLightOff();
+        yield return new WaitForSeconds(20f);
+        LeftCarLightOff();
+        StartSnow();
+        RightCarLightOff();
+        yield return new WaitForSeconds(30f);
+        RightCarLightOff();
+        yield return new WaitForSeconds(10f);
+        StartFog();
+        yield return new WaitForSeconds(10f);
+        LeftCarLightOff();
+        yield return new WaitForSeconds(2f);
+        RightCarLightOff();
+        yield return new WaitForSeconds(25f);
+        StartRain();
+        StartFog();
     }
 
     private void AllOfForTest()

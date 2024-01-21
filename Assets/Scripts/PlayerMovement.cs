@@ -64,7 +64,7 @@ public class PlayerMovement : MonoBehaviour
         rb.AddForce(movementSide * Time.deltaTime, 0, movementFront * Time.deltaTime, ForceMode.Force);
 	}
 
-    public void SetTargetSpeed(int newTargetSpeed)
+    public void SetTargetSpeed(float newTargetSpeed)
     {
         targetspeed = newTargetSpeed;
     }

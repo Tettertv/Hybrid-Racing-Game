@@ -24,4 +24,9 @@ public class AudioHandler : MonoBehaviour
     {
         effectsSource.PlayOneShot(clip);
     }
+
+    private void Start()
+    {
+        musicSource.Play();
+    }
 }

@@ -23,12 +23,6 @@ public class MoveLevelCars : MonoBehaviour
         yield return new WaitForSeconds(60f);
         speed = speed * 1.1f;
         yield return new WaitForSeconds(60f);
-        speed = speed * 0.8f;
-        yield return new WaitForSeconds(60f);
-        speed = speed * 0.8f;
-        yield return new WaitForSeconds(60f);
-        speed = speed * 0.8f;
-        yield return new WaitForSeconds(60f);
-        speed = speed * 0.8f;
+        speed = speed * 0.9f;
     }
 }

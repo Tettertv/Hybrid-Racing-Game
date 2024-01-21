@@ -12,7 +12,7 @@ public class ArduinoHandler : MonoBehaviour
     public PlayerMovement player;
     public EventsActivator eventHandler;
     //Serial port for Steering wheel
-    private SerialPort streamA = new SerialPort("COM3", 9600);
+    private SerialPort streamA = new SerialPort("COM7", 9600);
 
     private string line = "";
     public bool canControl = true;
@@ -157,16 +157,16 @@ public class ArduinoHandler : MonoBehaviour
             switch (speedmode)
             {
                 case "1":
-                    player.SetTargetSpeed(25);
+                    player.SetTargetSpeed(32.5f);
                     break;
                 case "2":
-                    player.SetTargetSpeed(40);
+                    player.SetTargetSpeed(40f);
                     break;
                 case "3":
-                    player.SetTargetSpeed(50);
+                    player.SetTargetSpeed(50f);
                     break;
                 case "4":
-                    player.SetTargetSpeed(60);
+                    player.SetTargetSpeed(60f);
                     break;
 
                 case "5":
@@ -191,41 +191,41 @@ public class ArduinoHandler : MonoBehaviour
     }
     private void ControllPanel()
     {
-        if (Input.GetKey(KeyCode.Alpha1))
+        if (Input.GetKey(KeyCode.A) && Input.GetKey(KeyCode.P))
         {
             speedmode = "1";
         }
-        else if (Input.GetKey(KeyCode.Alpha2))
+        else if (Input.GetKey(KeyCode.A) && Input.GetKey(KeyCode.Z))
         {
             speedmode = "2";
         }
-        else if (Input.GetKey(KeyCode.Alpha3))
+        else if (Input.GetKey(KeyCode.W) && Input.GetKey(KeyCode.M))
         {
             speedmode = "3";
         }
-        else if (Input.GetKey(KeyCode.Alpha4))
+        else if (Input.GetKey(KeyCode.P) && Input.GetKey(KeyCode.Q))
         {
             speedmode = "4";
         }
-        else if (Input.GetKey(KeyCode.Alpha5))
+        else if (Input.GetKey(KeyCode.S) && Input.GetKey(KeyCode.L) && Input.GetKey(KeyCode.I))
         {
             speedmode = "5";
         }
-        else if (Input.GetKey(KeyCode.Alpha6))
+        else if (Input.GetKey(KeyCode.E) && Input.GetKey(KeyCode.R) && Input.GetKey(KeyCode.K))
         {
             speedmode = "6";
         }
-        else if (Input.GetKey(KeyCode.Alpha7))
+        else if (Input.GetKey(KeyCode.T) && Input.GetKey(KeyCode.G) && Input.GetKey(KeyCode.B))
         {
             speedmode = "7";
         }
-        else if (Input.GetKey(KeyCode.Alpha8))
-        {
-            speedmode = "8";
-        }
-        else if (Input.GetKey(KeyCode.Alpha9))
+        else if (Input.GetKey(KeyCode.F) && Input.GetKey(KeyCode.N) && Input.GetKey(KeyCode.J))
         {
             speedmode = "9";
+        }
+        else if (Input.GetKey(KeyCode.X) && Input.GetKey(KeyCode.M) && Input.GetKey(KeyCode.R))
+        {
+            speedmode = "8";
         }
     }
 }
